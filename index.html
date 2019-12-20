@@ -1,7 +1,138 @@
-<!DOCTYPE html><html>
-  <head></head>
-  <body>
-    <a href="./javascript/snake.html"> Snake app</a>
-    <a href="./javascript/pathFinder.html"> Path Finder</a>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<title>Vitrine Projets</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/4917c58400.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee, .fa-dragon, .fa-fingerprint, .fa-globe-americas {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="./javascript/snake.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Snake</a>
+    <a href="./javascript/pathFinder.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Path Finding</a>
+    <a href="./javascript/GOL.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Game of Life</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="./javascript/snake.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Snake</a>
+    <a href="./javascript/pathFinder.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Path Finding</a>
+    <a href="./javascript/GOL.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Game of Life</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Mes Projets</h1>
+  <a href="#snakeDesc" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Snake</a>
+  <a href="#pathDesc" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Path Finding</a>
+  <a href="#GOLDesc" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Game of Life</a>
+  <p>Cliquer sur les icônes ou sur l'entête pour lancer les applications</p>
+</header>
+
+<!-- First Grid -->
+<div  id="snakeDesc" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Snake</h1>
+      <h5 class="w3-padding-32">Mini jeu</h5>
+
+      <p class="w3-text-grey">Déplacement avec les touches du clavier. Le but du jeu est simple. Vous dirigez un serpent qui croque des pommes. À chaque pomme mangée, il grandit d'une case. Le but étant de vivre le plus longtemps possible, vous mordre serait fatal.</p>
+    </div>
+    <div class="w3-third w3-center">
+      <a href="./javascript/snake.html" target="_blank"><i class="fas fa-dragon w3-padding-64 w3-text-red w3-margin-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div  id="pathDesc" class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <a href="./javascript/pathFinder.html" target="_blank"><i class="fa fa-fingerprint w3-padding-64 w3-text-red w3-margin-right"></i></a>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Path Finding</h1>
+      <h5 class="w3-padding-32">Algorithme A* pour trouver un chemin optimal</h5>
+
+      <p class="w3-text-grey">Le but de cette app est d'aller du point haut gauche au point bas-droite de la grille. On peut générer des labyrinthe aléatoires qui n'auront qu'une seule solution pour aller du départ à l'arrivée. Il est possible de dessiner son propre labyrinthe sur la grille.</p>
+    </div>
+  </div>
+</div>
+
+<div id="GOLDesc" class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Game of Life</h1>
+      <h5 class="w3-padding-32"><a href="https://fr.wikipedia.org/wiki/Jeu_de_la_vie">Explication du fonctionnement sur Wikipedia</a></h5>
+
+      <p class="w3-text-grey">Le jeu de la vie n’est pas un jeu, puisqu'il ne nécessite aucun joueur. Il s’agit d’un automate cellulaire, un modèle où chaque état conduit mécaniquement à l’état suivant à partir de règles pré-établies.<br>
+
+        Le « jeu » se déroule sur une grille à deux dimensions, théoriquement infinie (mais de longueur et de largeur finies et plus ou moins grandes dans la pratique), dont les cases qu’on appelle des « cellules », par analogie avec les cellules vivantes peuvent prendre deux états distincts : « vivante » ou « morte ».<br>
+        
+        À chaque étape, l’évolution d’une cellule est entièrement déterminée par l’état de ses huit voisines de la façon suivante :
+        Une chute de « bombes » non périodique.<br>
+        
+            Une cellule morte possédant exactement trois voisines vivantes devient vivante (elle naît).
+            Une cellule vivante possédant deux ou trois voisines vivantes le reste, sinon elle meurt.<br><br>
+      Sur l'app il est possible de générer aléatoirement des états du jeu de la vie, il est aussi possible de les "dessiner" à la souris.   
+      </p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <a href="./javascript/GOL.html" target="_blank"><i class="fas fa-globe-americas w3-padding-64 w3-text-red w3-margin-right"></i></a>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge"><p id="quoteGet"></p><p id="quoteAuthor"></p></h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <p>Nicolas Guinot Décembre 2019</p>
+ </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function getQuote() {
+  const URL = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?';
+  $.getJSON(URL, function(data, status){
+    $('#quoteGet').html(data.quoteText);
+    $('#quoteAuthor').html(data.quoteAuthor);
+  });
+}
+getQuote();
+
+</script>
+
+</body>
 </html>
