@@ -124,7 +124,7 @@ function myFunction() {
 }
 
 function getQuote() {
-  const URL = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?';
+  const URL = 'https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?';
   $.getJSON(URL, function(data, status){
     $('#quoteGet').html(data.quoteText);
     $('#quoteAuthor').html(data.quoteAuthor);
