@@ -56,17 +56,17 @@ class Snake{
     this.x += this.moveX * scl;
     this.y += this.moveY * scl;
     
-    if (this.x > w){
+    if (this.x >= w){
       this.x = 0;
     }
-    if (this.y > h) {
+    if (this.y >= h) {
       this.y = 0;
     }
     if (this.x < 0){
-      this.x = w;
+      this.x = w - scl;
     }
     if (this.y < 0) {
-      this.y = h;
+      this.y = h - scl;
     }
     this.lose();
     
@@ -79,13 +79,13 @@ class Snake{
 }
 
 function keyPressed() {
-  if (keyCode === UP_ARROW){
+  if (keyCode === UP_ARROW && (snake.moveY !== 1 || !score)){
     snake.move(0, -1);
-  } else if (keyCode === DOWN_ARROW){
+  } else if (keyCode === DOWN_ARROW && (snake.moveY !== -1 || !score)){
     snake.move(0, 1);
-  } else if (keyCode === LEFT_ARROW){
+  } else if (keyCode === LEFT_ARROW && (snake.moveX !== 1 || !score)){
     snake.move(-1, 0);
-  }else if (keyCode === RIGHT_ARROW){
+  }else if (keyCode === RIGHT_ARROW && (snake.moveX !== -1 || !score)){
     snake.move(1, 0);
   }
 }
@@ -103,6 +103,8 @@ function draw() {
   snake.show();
 
   snake.update();
+  document.getElementById('score').innerHTML = score * 100;
+
 
 
   fill(255, 0, 200);
